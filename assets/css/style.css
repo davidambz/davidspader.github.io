@@ -3,6 +3,7 @@
     margin: 0;
 }
 
-.social-icons span {
+.social-icons a {
     margin: 5px;
+    color: white;
 }
