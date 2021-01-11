@@ -5,5 +5,14 @@
 
 .social-icons a {
     margin: 5px;
-    color: white;
+}
+
+.social-icons a,
+strong.title {
+    color: #3081a8;
+}
+
+.social-icons a:hover,
+strong.title:hover {
+    color: #49c0fa;
 }
