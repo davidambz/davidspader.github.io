@@ -48,7 +48,6 @@ section {
 .pic .pic-social {
     width: 100%;
     background-color: #212529;
-    border-radius: 5px, 5px, 0, 5px;
 }
 
 .pic .pic-social a {
@@ -102,8 +101,5 @@ section {
     color: #f4f4f4;
     padding: 10px;
     background-color: #004B6B;
-}
-
-.p-skills {
-    margin: 25px;
+    display: inline-block;
 }
