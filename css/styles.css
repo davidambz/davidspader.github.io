@@ -73,8 +73,8 @@
   --bs-border-radius-xl: 1rem;
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
-  --bs-link-color: #9ece6a;
-  --bs-link-hover-color: #974a2d;
+  --bs-link-color: #ff9e64;
+  --bs-link-hover-color: #e0af68;
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
 }
@@ -249,7 +249,7 @@ sup {
 
 a {
   color: var(--bs-link-color);
-  text-decoration: underline;
+  text-decoration: none;
 }
 a:hover {
   color: var(--bs-link-hover-color);
@@ -10980,4 +10980,8 @@ section.resume-section .resume-section-content {
     padding-top: 5rem;
     padding-bottom: 5rem;
   }
+}
+
+.project-link {
+  margin: 5px;
 }
