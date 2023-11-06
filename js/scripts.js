@@ -19,36 +19,4 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     });
-
-    if(window.innerWidth > 991) {
-        menuItems = document.getElementById("navbarResponsive").getElementsByTagName("a");
-
-        menuDisplay(menuItems)
-
-        for (let i = 0; i < menuItems.length; i++) {
-            menuItems[i].onclick = function(){
-                for (let i = 0; i < menuItems.length; i++) {
-                    menuItems[i].classList.remove("active");
-                }
-
-                menuItems[i].classList.add("active");
-
-                menuDisplay(menuItems)
-            };
-        }
-    }
-
 });
-
-function menuDisplay(menuItems) {
-        for (let i = 0; i < menuItems.length; i++) {
-            href = menuItems[i].href.split('html')
-            div = document.body.querySelector(href[1])
-
-            if (!menuItems[i].classList.contains('active')) {
-                div.setAttribute("style","display:none;")
-            }else {
-                div.setAttribute("style","display:block;")
-            }
-        }
-}
