@@ -90,6 +90,7 @@ window.CONTENT = {
             resume: { label: 'Baixar currículo', file: './assets/curriculum/Currículo - David Ambrozio.pdf' },
             nav: { about: 'Sobre', experience: 'Experiência', projects: 'Projetos', contact: 'Contato' },
             langSwitch: { label: 'EN', aria: 'Switch to English' },
+            theme: { toLight: 'Mudar para o tema claro', toDark: 'Mudar para o tema escuro' },
             about: [
                 'Sou desenvolvedor backend, formado em Sistemas para Internet pela UNIVALI e programando profissionalmente desde 2018.',
                 'Comecei com PHP, Magento e Rails; hoje trabalho principalmente com Python e Node.js, construindo APIs e microsserviços. Nas horas vagas, gosto de criar meus próprios apps, como o relay e o umbra.',
@@ -109,6 +110,7 @@ window.CONTENT = {
             resume: { label: 'Download resume', file: './assets/curriculum/Resume - David Ambrozio.pdf' },
             nav: { about: 'About', experience: 'Experience', projects: 'Projects', contact: 'Contact' },
             langSwitch: { label: 'PT', aria: 'Mudar para português' },
+            theme: { toLight: 'Switch to light theme', toDark: 'Switch to dark theme' },
             about: [
                 'I\'m a backend developer with a degree in Internet Systems from UNIVALI, coding professionally since 2018.',
                 'I started with PHP, Magento and Rails; today I mostly work with Python and Node.js, building APIs and microservices. In my spare time I like building my own apps, like relay and umbra.',

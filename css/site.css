@@ -1,4 +1,8 @@
 :root {
+    --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    color-scheme: dark;
+
+    /* dark theme (default) */
     --bg: #09090b;
     --card: #111114;
     --line: #232329;
@@ -7,8 +11,38 @@
     --body: #c9c9cf;
     --muted: #8b8b94;
     --accent: #7dd3c0;
-    --accent-dim: rgba(125, 211, 192, .3);
-    --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --accent-rgb: 125, 211, 192;
+    --grid-opacity: .55;
+}
+
+/* light theme: used when the visitor picks it, or when their system is light and they haven't picked */
+:root[data-theme="light"] {
+    color-scheme: light;
+    --bg: #fafaf9;
+    --card: #ffffff;
+    --line: #e7e5e4;
+    --line-strong: #c9c6c3;
+    --fg: #18181b;
+    --body: #3f3f46;
+    --muted: #6b6b73;
+    --accent: #0f766e;
+    --accent-rgb: 15, 118, 110;
+    --grid-opacity: .7;
+}
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+        color-scheme: light;
+        --bg: #fafaf9;
+        --card: #ffffff;
+        --line: #e7e5e4;
+        --line-strong: #c9c6c3;
+        --fg: #18181b;
+        --body: #3f3f46;
+        --muted: #6b6b73;
+        --accent: #0f766e;
+        --accent-rgb: 15, 118, 110;
+        --grid-opacity: .7;
+    }
 }
 
 * { box-sizing: border-box; }
@@ -17,6 +51,7 @@ html { scroll-behavior: smooth; }
 
 body {
     position: relative;
+    transition: background-color .2s, color .2s;
     margin: 0;
     background: var(--bg);
     color: var(--fg);
@@ -37,7 +72,7 @@ body::before {
     background-size: 48px 48px;
     mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 75%);
     -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 75%);
-    opacity: .55;
+    opacity: var(--grid-opacity);
 }
 
 a { color: inherit; }
@@ -61,7 +96,28 @@ a { color: inherit; }
     padding: 5px 10px;
     cursor: pointer;
 }
-.lang:hover { color: var(--fg); border-color: var(--line-strong); }
+.lang:hover, .theme:hover { color: var(--fg); border-color: var(--line-strong); }
+.theme {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 28px;
+    padding: 0;
+    color: var(--muted);
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    cursor: pointer;
+}
+.theme svg { width: 15px; height: 15px; }
+/* show the sun in dark mode (switch to light) and the moon in light mode */
+.theme .moon { display: none; }
+:root[data-theme="light"] .theme .sun { display: none; }
+:root[data-theme="light"] .theme .moon { display: block; }
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) .theme .sun { display: none; }
+    :root:not([data-theme="dark"]) .theme .moon { display: block; }
+}
 
 /* ---------- hero ---------- */
 .hero { padding: 96px 0 72px; }
@@ -72,7 +128,7 @@ a { color: inherit; }
     border-radius: 16px;
     image-rendering: pixelated;
     background: #05050d;
-    box-shadow: 0 0 0 1px var(--line), 0 0 40px rgba(125, 211, 192, .12);
+    box-shadow: 0 0 0 1px var(--line), 0 0 40px rgba(var(--accent-rgb), .14);
 }
 .status {
     display: inline-flex;
@@ -80,8 +136,8 @@ a { color: inherit; }
     gap: 8px;
     font: 500 12px var(--mono);
     color: var(--accent);
-    border: 1px solid var(--accent-dim);
-    background: rgba(125, 211, 192, .06);
+    border: 1px solid rgba(var(--accent-rgb), .3);
+    background: rgba(var(--accent-rgb), .07);
     padding: 5px 12px;
     border-radius: 999px;
 }
@@ -91,7 +147,7 @@ a { color: inherit; }
     height: 7px;
     border-radius: 50%;
     background: var(--accent);
-    box-shadow: 0 0 0 3px rgba(125, 211, 192, .2);
+    box-shadow: 0 0 0 3px rgba(var(--accent-rgb), .2);
 }
 h1 {
     font-size: clamp(40px, 7vw, 68px);
@@ -160,7 +216,7 @@ h2 { font-size: 28px; letter-spacing: -.02em; font-weight: 600; margin: 0 0 36px
     padding: 22px;
     transition: border-color .2s, transform .2s;
 }
-.card:hover { border-color: rgba(125, 211, 192, .5); transform: translateY(-2px); }
+.card:hover { border-color: rgba(var(--accent-rgb), .5); transform: translateY(-2px); }
 .card h3 { margin: 0; font: 600 18px var(--mono); display: flex; justify-content: space-between; }
 .card h3::after { content: "↗"; color: var(--muted); font-weight: 400; transition: color .2s; }
 .card:hover h3::after { color: var(--accent); }

@@ -6,6 +6,9 @@
     const app = document.getElementById('app');
     const footer = document.getElementById('footer');
     const langBtn = document.getElementById('lang');
+    const themeBtn = document.getElementById('theme');
+    const root = document.documentElement;
+    const systemLight = window.matchMedia('(prefers-color-scheme: light)');
 
     const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
     const ext = (url, text, cls = '') => `<a${cls ? ` class="${cls}"` : ''} href="${esc(url)}" target="_blank" rel="noopener">${esc(text)}</a>`;
@@ -33,6 +36,13 @@
         const saved = store.get('lang');
         if (LANGS.includes(saved)) return saved;
         return (navigator.language || 'pt').toLowerCase().startsWith('pt') ? 'pt' : 'en';
+    }
+
+    // the theme in use: the visitor's choice if they made one, otherwise the system's
+    const currentTheme = () => root.dataset.theme || (systemLight.matches ? 'light' : 'dark');
+    function labelThemeButton() {
+        const T = C.text[lang];
+        themeBtn.setAttribute('aria-label', currentTheme() === 'dark' ? T.theme.toLight : T.theme.toDark);
     }
 
     function render(lang) {
@@ -113,10 +123,19 @@
 
     let lang = initialLang();
     render(lang);
+    labelThemeButton();
+
+    themeBtn.addEventListener('click', () => {
+        root.dataset.theme = currentTheme() === 'dark' ? 'light' : 'dark';
+        store.set('theme', root.dataset.theme);
+        labelThemeButton();
+    });
+    systemLight.addEventListener('change', labelThemeButton);
 
     langBtn.addEventListener('click', () => {
         lang = LANGS[(LANGS.indexOf(lang) + 1) % LANGS.length];
         store.set('lang', lang);
         render(lang);
+        labelThemeButton();
     });
 })();
