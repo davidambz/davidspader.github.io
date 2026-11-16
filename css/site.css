@@ -130,7 +130,7 @@ h1, h2, h3 { text-wrap: balance; }
 
 /* ---------- hero ---------- */
 .hero { padding: 96px 0 72px; }
-.hero-row { display: flex; align-items: center; gap: 22px; }
+.hero-row { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 22px; }
 .avatar {
     width: 64px;   /* the source is 64px: 1:1 here, exact 2x on retina, so every pixel stays square */
     height: 64px;
@@ -149,6 +149,7 @@ h1, h2, h3 { text-wrap: balance; }
     background: rgba(var(--accent-rgb), .07);
     padding: 5px 12px;
     border-radius: 999px;
+    white-space: nowrap;
 }
 .status::before {
     content: "";
