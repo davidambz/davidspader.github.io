@@ -34,8 +34,8 @@ window.CONTENT = {
         {
             company: 'Devhatt', start: '2023-10', end: '2024-11',
             stack: ['Node.js', 'TypeScript', 'Express', 'Go', 'PostgreSQL', 'Prisma', 'Docker', 'React'],
-            pt: { role: 'Desenvolvedor Fullstack', desc: 'Projetos open source, como o Octopost e o PetDex.' },
-            en: { role: 'Fullstack Developer', desc: 'Open source projects such as Octopost and PetDex.' },
+            pt: { role: 'Desenvolvedor Fullstack', desc: 'Octopost, ferramenta open source para publicar o mesmo post em várias redes sociais de uma só vez.' },
+            en: { role: 'Fullstack Developer', desc: 'Octopost, an open source tool to publish the same post to multiple social networks at once.' },
         },
         {
             company: 'Asseinfo', start: '2021-05', end: '2021-08',
@@ -46,14 +46,14 @@ window.CONTENT = {
         {
             company: 'Híbrido', start: '2019-02', end: '2020-06',
             stack: ['PHP', 'Magento 1', 'Magento 2', 'MySQL', 'JavaScript', 'Docker'],
-            pt: { role: 'Desenvolvedor Magento', desc: 'E-commerces.' },
-            en: { role: 'Magento Developer', desc: 'E-commerce stores.' },
+            pt: { role: 'Desenvolvedor Magento', desc: 'E-commerces de marcas como Havan, Korova e Midea.' },
+            en: { role: 'Magento Developer', desc: 'Online stores for brands such as Havan, Korova and Midea.' },
         },
         {
             company: 'Features Design', start: '2018-06', end: '2019-02',
             stack: ['PHP', 'WordPress', 'HTML', 'CSS', 'JavaScript', 'MySQL'],
-            pt: { role: 'Desenvolvedor Web', desc: 'Sites para comércios locais.' },
-            en: { role: 'Web Developer', desc: 'Websites for local businesses.' },
+            pt: { role: 'Desenvolvedor Web', desc: 'Sites para empresas locais, principalmente pousadas e hotéis.' },
+            en: { role: 'Web Developer', desc: 'Websites for local businesses, mainly guesthouses and hotels.' },
         },
     ],
 
