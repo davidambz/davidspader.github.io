@@ -190,6 +190,9 @@ section[id] { padding: 64px 0; border-top: 1px solid var(--line); scroll-margin-
 .label { width: 28px; height: 3px; margin: 0 0 18px; background: var(--accent); font-size: 0; }
 h2 { font-size: 28px; letter-spacing: -.02em; font-weight: 600; margin: 0 0 36px; }
 
+.inline-link { color: var(--accent); text-decoration: none; white-space: nowrap; }
+.inline-link::after { content: ""; display: inline-block; width: .5em; height: .5em; margin-left: .35em; border: solid currentColor; border-width: 0 2px 2px 0; transform: translateY(-.2em) rotate(45deg); }
+.inline-link:hover { text-decoration: underline; text-underline-offset: 4px; }
 .about p:not(.label) { font-size: 18px; color: var(--body); margin: 0 0 16px; max-width: 700px; }
 
 .timeline { list-style: none; margin: 0; padding: 0; }

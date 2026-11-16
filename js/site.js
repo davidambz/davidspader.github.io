@@ -18,6 +18,8 @@
     // link to another site: new tab, announced to screen readers
     const ext = (url, html, cls = '') =>
         `<a${cls ? ` class="${cls}"` : ''} href="${esc(url)}" target="_blank" rel="noopener">${html}<span class="sr-only"> ${esc(T().newTab)}</span></a>`;
+    // [text](#section) -> link to a section of this page (runs on already-escaped text)
+    const inlineLinks = html => html.replace(/\[([^\]]+)\]\((#[\w-]+)\)/g, '<a class="inline-link" href="$2">$1</a>');
     const tags = list => `<ul class="tags">${list.map(t => `<li>${esc(t)}</li>`).join('')}</ul>`;
     const arrow = '<svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9"/></svg>';
 
@@ -93,7 +95,7 @@
             <section id="sobre" class="about">
                 <p class="label" aria-hidden="true">-</p>
                 <h2>${esc(t.nav.about)}</h2>
-                ${t.about.map(p => `<p>${esc(p)}</p>`).join('')}
+                ${t.about.map(p => `<p>${inlineLinks(esc(p))}</p>`).join('')}
             </section>
 
             <section id="experiencia">

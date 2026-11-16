@@ -4,6 +4,7 @@
 //   are written once.
 // - Anything that changes with the language has a `pt` and an `en` version side by side,
 //   so you can't add one and forget the other.
+// - In the About text, [text](#section) becomes a link to that part of the page.
 // - Dates are 'YYYY-MM'; the site formats them for each language. `end: null` means "now".
 window.CONTENT = {
     name: 'David Ambrozio',
@@ -93,9 +94,9 @@ window.CONTENT = {
             langSwitch: { label: 'EN', aria: 'EN, switch to English', lang: 'en' },
             theme: { toLight: 'Mudar para o tema claro', toDark: 'Mudar para o tema escuro' },
             about: [
-                'Sou formado em Sistemas para Internet pela UNIVALI e moro em Bombinhas, SC.',
-                'Comecei com PHP, Magento e Rails e fui passando por backend e frontend; hoje trabalho principalmente com Python e Node.js.',
-                'Gosto de APIs bem desenhadas, de sistemas que não caem e de automatizar tudo que é repetitivo.',
+                'Formado em Sistemas para Internet pela UNIVALI, trabalho remoto de Bombinhas, SC, para times de qualquer lugar.',
+                'Já trabalhei com e-commerce, ERP, open source e plataformas de conteúdo, sempre transitando entre backend e frontend.',
+                'Nas horas vagas, crio apps que eu mesmo uso, como o relay e o umbra. [Ver projetos](#projetos)',
             ],
             at: '@',
             present: 'atual',
@@ -116,9 +117,9 @@ window.CONTENT = {
             langSwitch: { label: 'PT', aria: 'PT, mudar para português', lang: 'pt-br' },
             theme: { toLight: 'Switch to light theme', toDark: 'Switch to dark theme' },
             about: [
-                'I hold a degree in Internet Systems from UNIVALI and live in Bombinhas, Brazil.',
-                'I started with PHP, Magento and Rails and worked across backend and frontend; today I mostly use Python and Node.js.',
-                'I like well-designed APIs, systems that stay up, and automating anything repetitive.',
+                'With a degree in Internet Systems from UNIVALI, I work remotely from Bombinhas, Brazil, with teams anywhere.',
+                'I\'ve worked on e-commerce, ERP, open source and content platforms, always moving between backend and frontend.',
+                'In my spare time, I build apps I use myself, like relay and umbra. [See projects](#projetos)',
             ],
             at: '@',
             present: 'now',
