@@ -40,8 +40,8 @@ window.CONTENT = {
         {
             company: 'Asseinfo', start: '2021-05', end: '2021-08',
             stack: ['Ruby', 'Ruby on Rails', 'JavaScript', 'React', 'PostgreSQL', 'Docker'],
-            pt: { role: 'Desenvolvedor Fullstack', desc: 'Sistema de gestão empresarial (ERP).' },
-            en: { role: 'Fullstack Developer', desc: 'Enterprise resource planning (ERP) system.' },
+            pt: { role: 'Desenvolvedor Fullstack', desc: 'Desenvolvimento de um sistema de gestão empresarial (ERP) usado por empresas no dia a dia.' },
+            en: { role: 'Fullstack Developer', desc: 'Development of an enterprise resource planning (ERP) system used by businesses day to day.' },
         },
         {
             company: 'Híbrido', start: '2019-02', end: '2020-06',
