@@ -24,7 +24,7 @@ window.CONTENT = {
         langSwitch: 'EN',
         about: [
             'Sou desenvolvedor backend, formado em Sistemas para Internet pela UNIVALI e programando profissionalmente desde 2018.',
-            'Comecei com PHP, Magento e Rails; hoje trabalho principalmente com Python e Node.js, construindo APIs e microsserviços. Nas horas vagas, crio apps nativos para Windows, como o relay e o umbra.',
+            'Comecei com PHP, Magento e Rails; hoje trabalho principalmente com Python e Node.js, construindo APIs e microsserviços. Nas horas vagas, gosto de criar meus próprios apps, como o relay e o umbra.',
             'Gosto de APIs bem desenhadas, de sistemas que não caem e de automatizar tudo que é repetitivo.',
         ],
         experience: [
@@ -54,7 +54,7 @@ window.CONTENT = {
         langSwitch: 'PT',
         about: [
             'I\'m a backend developer with a degree in Internet Systems from UNIVALI, coding professionally since 2018.',
-            'I started with PHP, Magento and Rails; today I mostly work with Python and Node.js, building APIs and microservices. In my spare time I build native Windows apps, like relay and umbra.',
+            'I started with PHP, Magento and Rails; today I mostly work with Python and Node.js, building APIs and microservices. In my spare time I like building my own apps, like relay and umbra.',
             'I like well-designed APIs, systems that stay up, and automating anything repetitive.',
         ],
         experience: [
