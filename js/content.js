@@ -67,8 +67,8 @@ window.CONTENT = {
         {
             repo: 'umbra',
             stack: ['C++', 'Direct3D', 'TypeScript'],
-            pt: 'Papel de parede animado para Windows: vídeo, GIF ou página HTML atrás dos ícones, com um fundo por monitor e pausa automática em jogos.',
-            en: 'Animated wallpaper player for Windows: video, GIF or an HTML page behind the desktop icons, with per-monitor backgrounds and auto-pause in games.',
+            pt: 'Wallpapers animados para Windows: leve, com suporte a vários monitores e pausa automática em jogos.',
+            en: 'Animated wallpapers for Windows: lightweight, with multi-monitor support and auto-pause in games.',
         },
         {
             repo: 'hostly',
