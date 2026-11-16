@@ -13,6 +13,7 @@ window.CONTENT = {
 
     contacts: [
         { label: 'Email', url: 'mailto:davidambroziodev@gmail.com', text: 'davidambroziodev@gmail.com', copy: true },
+        { label: 'WhatsApp', url: 'https://wa.me/5547992878998', text: '(47) 99287-8998' },
         { label: 'LinkedIn', url: 'https://www.linkedin.com/in/david-spader-ambrozio-2b4139124/', text: 'in/david-spader-ambrozio' },
         { label: 'GitHub', url: 'https://github.com/davidambz', text: 'github.com/davidambz' },
     ],
