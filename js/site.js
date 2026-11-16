@@ -88,6 +88,7 @@
                 <p class="intro">${esc(t.intro)}</p>
                 <div class="actions">
                     <a class="btn primary" href="${encodeURI(t.resume.file)}" download>${esc(t.resume.label)} <span class="meta">${esc(t.resume.meta)}</span></a>
+                    <a class="btn" href="#contato">${esc(t.contactCta)}</a>
                     ${C.contacts.filter(c => ['GitHub', 'LinkedIn'].includes(c.label)).map(c => ext(c.url, esc(c.label), 'btn')).join('')}
                 </div>
             </section>
