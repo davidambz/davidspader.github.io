@@ -13,6 +13,7 @@
     --accent: #7dd3c0;
     --accent-rgb: 125, 211, 192;
     --grid-opacity: .55;
+    --avatar-bg: #05050d;
 }
 
 /* light theme: used when the visitor picks it, or when their system is light and they haven't picked */
@@ -28,6 +29,7 @@
     --accent: #0f766e;
     --accent-rgb: 15, 118, 110;
     --grid-opacity: .7;
+    --avatar-bg: #10101c;
 }
 @media (prefers-color-scheme: light) {
     :root:not([data-theme="dark"]) {
@@ -42,6 +44,7 @@
         --accent: #0f766e;
         --accent-rgb: 15, 118, 110;
         --grid-opacity: .7;
+        --avatar-bg: #10101c;
     }
 }
 
@@ -76,6 +79,14 @@ body::before {
 }
 
 a { color: inherit; }
+::selection { background: var(--accent); color: var(--bg); }
+html { scrollbar-color: var(--line-strong) var(--bg); }
+p { text-wrap: pretty; }
+h1, h2, h3 { text-wrap: balance; }
+.sr-only {
+    position: absolute; width: 1px; height: 1px; overflow: hidden;
+    clip-path: inset(50%); white-space: nowrap;
+}
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
 
 .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
@@ -123,11 +134,11 @@ a { color: inherit; }
 .hero { padding: 96px 0 72px; }
 .hero-row { display: flex; align-items: center; gap: 22px; }
 .avatar {
-    width: 72px;
-    height: 72px;
-    border-radius: 16px;
+    width: 64px;   /* the source is 64px: 1:1 here, exact 2x on retina, so every pixel stays square */
+    height: 64px;
+    border-radius: 14px;
     image-rendering: pixelated;
-    background: #05050d;
+    background: var(--avatar-bg);
     box-shadow: 0 0 0 1px var(--line), 0 0 40px rgba(var(--accent-rgb), .14);
 }
 .status {
@@ -158,6 +169,7 @@ h1 {
 }
 h1 em { font-style: normal; color: var(--muted); }
 .intro { font-size: 19px; color: var(--muted); max-width: 620px; margin: 0; }
+.intro + .intro { margin-top: 12px; }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
 .btn {
     text-decoration: none;
@@ -172,6 +184,7 @@ h1 em { font-style: normal; color: var(--muted); }
 .btn:hover { border-color: var(--line-strong); }
 .btn.primary { background: var(--fg); color: var(--bg); border-color: var(--fg); }
 .btn.primary:hover { background: var(--accent); border-color: var(--accent); }
+.btn .meta { font: 400 12px var(--mono); opacity: .65; margin-left: 4px; }
 
 /* ---------- sections ---------- */
 section[id] { padding: 64px 0; border-top: 1px solid var(--line); scroll-margin-top: 16px; }
@@ -217,9 +230,9 @@ h2 { font-size: 28px; letter-spacing: -.02em; font-weight: 600; margin: 0 0 36px
     transition: border-color .2s, transform .2s;
 }
 .card:hover { border-color: rgba(var(--accent-rgb), .5); transform: translateY(-2px); }
-.card h3 { margin: 0; font: 600 18px var(--mono); display: flex; justify-content: space-between; }
-.card h3::after { content: "↗"; color: var(--muted); font-weight: 400; transition: color .2s; }
-.card:hover h3::after { color: var(--accent); }
+.card h3 { margin: 0; font: 600 18px var(--mono); display: flex; justify-content: space-between; align-items: center; }
+.card .arrow { width: 16px; height: 16px; color: var(--muted); transition: color .2s; }
+.card:hover .arrow { color: var(--accent); }
 .card p { margin: 0; color: var(--muted); font-size: 15px; flex: 1; }
 
 .contact-box {
@@ -247,13 +260,39 @@ h2 { font-size: 28px; letter-spacing: -.02em; font-weight: 600; margin: 0 0 36px
 .contact-box li span { color: var(--muted); }
 .contact-box li a { text-decoration: none; overflow-wrap: anywhere; }
 .contact-box li a:hover { color: var(--accent); }
+.contact-link { display: inline-flex; align-items: center; gap: 10px; min-width: 0; }
+.copy {
+    font: 500 11px var(--mono);
+    color: var(--muted);
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 3px 8px;
+    cursor: pointer;
+}
+.copy:hover { color: var(--fg); border-color: var(--line-strong); }
+.copy.done { color: var(--accent); border-color: var(--accent); }
 
 footer { padding: 40px 0 56px; color: var(--muted); font: 400 13px var(--mono); }
 
-noscript a { color: var(--accent); }
+/* no-JS fallback (index.html) */
+.contact-box:has(> div > ul) { align-items: start; }
+.contact-box > div > ul > li { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+/* without JS the theme/language buttons and section links can't work */
+:root:not(.js) .top nav, :root:not(.js) .theme, :root:not(.js) .lang { display: none; }
+.contact-box > div:has(> ul) h2 { margin-bottom: 16px; }
+
+/* touch screens: buttons at least 44px so they're easy to hit */
+@media (pointer: coarse) {
+    .theme, .lang { min-width: 44px; height: 44px; }
+    .top nav a { display: inline-flex; align-items: center; min-height: 44px; }
+    .copy { min-height: 36px; padding: 0 12px; }
+}
 
 @media (max-width: 720px) {
-    .top nav { display: none; }
+    /* the section links move to their own row under the brand */
+    .top { flex-wrap: wrap; row-gap: 4px; padding-bottom: 8px; }
+    .top nav { order: 1; width: 100%; justify-content: space-between; gap: 0; font-size: 15px; }
     .hero { padding: 56px 0 48px; }
     .timeline > li { grid-template-columns: 1fr; gap: 4px; }
     .contact-box { grid-template-columns: 1fr; padding: 24px; }
