@@ -91,13 +91,13 @@
             </section>
 
             <section id="sobre" class="about">
-                <p class="label">01</p>
+                <p class="label" aria-hidden="true">-</p>
                 <h2>${esc(t.nav.about)}</h2>
                 ${t.about.map(p => `<p>${esc(p)}</p>`).join('')}
             </section>
 
             <section id="experiencia">
-                <p class="label">02</p>
+                <p class="label" aria-hidden="true">-</p>
                 <h2>${esc(t.nav.experience)}</h2>
                 <ol class="timeline">
                     ${C.experience.map(job => `
@@ -113,7 +113,7 @@
             </section>
 
             <section id="projetos">
-                <p class="label">03</p>
+                <p class="label" aria-hidden="true">-</p>
                 <h2>${esc(t.nav.projects)}</h2>
                 <div class="grid">
                     ${C.projects.map(p => `

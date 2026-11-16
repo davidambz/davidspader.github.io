@@ -62,17 +62,15 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* faint grid behind the hero, fading out as it goes down */
+/* faint dot grid behind the hero, fading out as it goes down */
 body::before {
     content: "";
     position: absolute;
     inset: 0 0 auto 0;
     height: 720px;
     z-index: -1;
-    background-image:
-        linear-gradient(var(--line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--line) 1px, transparent 1px);
-    background-size: 48px 48px;
+    background-image: radial-gradient(var(--line-strong) 1px, transparent 1.5px);
+    background-size: 24px 24px;
     mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 75%);
     -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 75%);
     opacity: var(--grid-opacity);
