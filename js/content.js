@@ -22,14 +22,14 @@ window.CONTENT = {
         {
             company: 'Finq', start: '2026-03', end: '2026-11',
             stack: ['Python', 'FastAPI', 'SQLAlchemy', 'PostgreSQL', 'Google Cloud', 'Auth0', 'Stripe', 'Gemini', 'GitHub Actions'],
-            pt: { role: 'Desenvolvedor Backend', desc: 'Microsserviços de uma plataforma de educação e carreira no mercado financeiro.' },
-            en: { role: 'Backend Developer', desc: 'Microservices for an education and career platform for the financial market.' },
+            pt: { role: 'Desenvolvedor Backend', desc: 'Microsserviços de uma plataforma de educação e carreira no mercado financeiro, com pagamentos e recursos de IA.' },
+            en: { role: 'Backend Developer', desc: 'Microservices for an education and career platform for the financial market, with payments and AI features.' },
         },
         {
             company: 'Reapho', start: '2025-07', end: '2026-03',
             stack: ['TypeScript', 'NestJS', 'Next.js', 'PostgreSQL', 'Prisma', 'Docker'],
-            pt: { role: 'Desenvolvedor Fullstack', desc: 'Plataforma global de quadrinhos, mangás e webtoons com trilha sonora e efeitos que reagem ao olhar do leitor (eye-tracking).' },
-            en: { role: 'Fullstack Developer', desc: 'Global platform for comics, manga and webtoons, with soundtracks and effects that react to where the reader is looking (eye-tracking).' },
+            pt: { role: 'Desenvolvedor Fullstack', desc: 'Plataforma global de quadrinhos, mangás e webtoons em que a trilha sonora e os efeitos reagem ao olhar do leitor.' },
+            en: { role: 'Fullstack Developer', desc: 'Global platform for comics, manga and webtoons where the soundtrack and effects react to the reader\'s gaze.' },
         },
         {
             company: 'Devhatt', start: '2023-10', end: '2024-11',
